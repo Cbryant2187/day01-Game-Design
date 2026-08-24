@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Drawing Demo</title>
+    </head>
+    <body>
+        <canvas id="canv">
+
+        </canvas>
+        <script>
+            let canvas = document.querySelector("#canv")
+            let ctx = canvas.getContext("2d")
+
+            canvas.width = window.innerwidth
+            canvas.width = window.innerheight
+
+            //signal to context about to draw, tutorial skip typical
+            ctx.save()
+
+            //centering, Y GOES DOWN
+            ctx.translate(50, 75)
+
+            ctx.lineTo(0, -20)
+            ctx.lineTo(10, -30)
+            ctx.lineTo(10, 0)
+            ctx.lineTo(50, -40)
+            ctx.lineTo(20, 200)
+            ctx.lineTo(60, -50)
+            ctx.lineTo(50, 0)
+            ctx.lineTo(0, 40)
+
+
+            ctx.fillStyle = "blue"
+            ctx.fill()
+
+            //signal to context end of drawing
+            ctx.store()
+        </script>
+    </body>
+</html>
