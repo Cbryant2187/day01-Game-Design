@@ -1,11 +1,18 @@
 <html>
     <head>
         <title>Drawing Demo</title>
+        <styles>
+            *{
+                margin:0;
+                overflow: hidden;
+            }
+        </styles>
     </head>
     <body>
         <canvas id="canv">
 
         </canvas>
+        <script src=""vextor2.js><</script>
         <script>
             let canvas = document.querySelector("#canv")
             let ctx = canvas.getContext("2d")
@@ -13,24 +20,43 @@
             canvas.width = window.innerwidth
             canvas.width = window.innerheight
 
+            let position = new Vector2(50, 50)
+
+            function gameLoop(){
+                update()
+                draw()
+                requestAnimationFrame(gameLoop)
+            }
+
+            function update() {
+            position.x = position.x + 7
+
+            }
+
+            
+            function draw() {
             //signal to context about to draw, tutorial skip typical
             ctx.save()
 
             //centering, Y GOES DOWN
-            ctx.translate(50, 75)
+            ctx.translate(position.x, position.y)
 
             ctx.lineTo(0, -20)
             ctx.lineTo(10, -30)
             ctx.lineTo(10, 0)
             ctx.lineTo(50, -40)
-            ctx.lineTo(20, 200)
             ctx.lineTo(60, -50)
-            ctx.lineTo(50, 0)
+            ctx.lineTo(500, 0)
             ctx.lineTo(0, 40)
 
 
             ctx.fillStyle = "blue"
             ctx.fill()
+
+            ctx.restore()
+        }
+        
+        requestAnimationFrame(gameLoop)
 
             //signal to context end of drawing
             ctx.store()
