@@ -1,5 +1,7 @@
-class Vextor2{
+class Vector2{
+
     x
+
     y
 
     constructor(x, y){

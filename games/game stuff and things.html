@@ -16,7 +16,11 @@
 
         </canvas>
 
-        <script src=""vextor2.js></script>
+        <script src="../engine/vector2.js"></script>
+        <script src="../engine/input.js"></script>
+        <script src="../engine/engine.js"></script> 
+
+
         <script>
             let canvas = document.querySelector("#canv")
             let ctx = canvas.getContext("2d")
@@ -33,12 +37,27 @@
             }
 
             function update() {
-            position.x = position.x + 7
+                
+                if (Input.isKeyDown("ArrowRight")){
+                    position.x = position.x + 1
+                }
+
+                if (Input.isKeyDown("ArrowLeft")){
+                    position.x = position.x - 1
+                }
+
+                if (Input.isKeyDown("ArrowUp")){
+                    position.y = position.y - 1
+                }
+
+                if (Input.isKeyDown("ArrowDown")){
+                    position.y = position.y + 1
+                }
 
             }
 
                 
-            function draw() {
+            function draw(ctx) {
             //signal to context about to draw, tutorial skip typical
             ctx.save()
 
@@ -64,6 +83,11 @@
 
             //signal to context end of drawing
             ctx.store()
+
+
+        Engine.start()
+
+
         </script>
     </body>
 
