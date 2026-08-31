@@ -1,18 +1,22 @@
+<!doctype html>
 <html>
+
     <head>
         <title>Drawing Demo</title>
-        <styles>
-            *{
-                margin:0;
-                overflow: hidden;
+        <style>            
+        *{
+            margin:0;
+            overflow: hidden;
             }
-        </styles>
+        </style>
     </head>
+
     <body>
         <canvas id="canv">
 
         </canvas>
-        <script src=""vextor2.js><</script>
+
+        <script src=""vextor2.js></script>
         <script>
             let canvas = document.querySelector("#canv")
             let ctx = canvas.getContext("2d")
@@ -33,7 +37,7 @@
 
             }
 
-            
+                
             function draw() {
             //signal to context about to draw, tutorial skip typical
             ctx.save()
@@ -62,4 +66,5 @@
             ctx.store()
         </script>
     </body>
+
 </html>
